@@ -13,12 +13,13 @@ socket.on('disconnect', () => {
 })
 
 socket.on('newMessage', (message) => {
-    console.log("New message", message)
-    messages.innerHTML += `${message.from}: ${message.text}<br/>`
+    let time = moment(message.createdAt).format('hh:mm')
+    messages.innerHTML += `[${time}] ${message.from}: ${message.text}<br/>`
 })
 
 socket.on('newLocationMessage', (message) => {
-    messages.innerHTML += `${message.from}: <a href="${message.url}" target="_blank">View my location</a><br/>`
+    let time = moment(message.createdAt).format('hh:mm')
+    messages.innerHTML += `[${time}] ${message.from}: <a href="${message.url}" target="_blank">View my location</a><br/>`
 })
 
 form.addEventListener('submit', (e) => {
