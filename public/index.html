@@ -5,21 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Node Websocket chat app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <h1>Node Websocket chat app</h1>
-    <p>//todo:</p>
+<body class="chat">
+    <div class="chat__sidebar">
+        <h3>People</h3>
+        <div id="users"></div>
+    </div>
 
-    <form id="message-form">
-        <input type="text" name="message" placeholder="Got something to say?">
-        <button>Send</button>
-    </form>
+    <div class="chat__main">
+        <div id="messages" class="chat__messages"></div>
 
-    <p>
-        <button id="send-location">Send my location</button>
-    </p>
-    
-    <div id="messages"></div>
+        <div class="chat__footer">
+            <form id="message-form">
+                <input type="text" name="message" placeholder="Got something to say?" autofocus autocomplete="off">
+                <button>Send</button>
+            </form>            
+            <button id="send-location">Send my location</button>
+        </div>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/index.js"></script>

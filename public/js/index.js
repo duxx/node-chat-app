@@ -34,8 +34,11 @@ locationButton.addEventListener('click', (e) => {
     if(!navigator.geolocation) {
         return alert("Geolocation is not supported by your browser.")
     }
-
+    locationButton.setAttribute('disabled', 'disabled')
+    locationButton.textContent = 'Sending location...'
     navigator.geolocation.getCurrentPosition((position) => {
+        locationButton.removeAttribute('disabled')
+        locationButton.textContent = 'Send my location'
         console.log(position)
         socket.emit('createLocationMessage', {
             latitude: position.coords.latitude,
