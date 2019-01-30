@@ -3,30 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Node Websocket chat app</title>
+    <title>Join Websocket Chat Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css" />
 </head>
-<body class="chat">
-    <div class="chat__sidebar">
-        <h3>People</h3>
-        <div id="users"></div>
+<body class="centered-form">
+    <div class="centered-form__form">
+        <form action="/chat.html">
+            <div class="form-field">
+                <h3>Join a Chat</h3>
+            </div>
+            <div class="form-field">
+                <label for="name">Display name</label>
+                <input type="text" name="name" autofocus autocomplete="off">
+            </div>
+            <div class="form-field">
+                <label for="room">Room name</label>
+                <input type="text" name="room">
+            </div>
+            <div class="form-field">
+                <button>Join</button>
+            </div>
+        </form>
     </div>
-
-    <div class="chat__main">
-        <div id="messages" class="chat__messages"></div>
-
-        <div class="chat__footer">
-            <form id="message-form">
-                <input type="text" name="message" placeholder="Got something to say?" autofocus autocomplete="off">
-                <button>Send</button>
-            </form>            
-            <button id="send-location">Send my location</button>
-        </div>
-    </div>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/moment.js"></script>
-    <script src="/js/index.js"></script>
+    
 </body>
 </html>
